@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Elements Comparison</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .example { margin-bottom: 20px; }
+    .example h3 { color: #2c3e50; }
+    .box { border: 2px solid #ccc; padding: 10px; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h1>HTML Elements Comparison</h1>
+
+  <!-- Div vs Section -->
+  <div class="example">
+    <h3>1. Div vs Section</h3>
+    <div class="box">
+      <div>
+        <p>This is a generic container using <strong>&lt;div&gt;</strong>. It has no semantic meaning.</p>
+      </div>
+      <section>
+        <h2>Section Title</h2>
+        <p>This is a meaningful grouping of content using <strong>&lt;section&gt;</strong>.</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Paragraph vs Article -->
+  <div class="example">
+    <h3>2. Paragraph vs Article</h3>
+    <div class="box">
+      <p>This is a single paragraph using <strong>&lt;p&gt;</strong>.</p>
+      <article>
+        <h2>Article Title</h2>
+        <p>This is a group of content using <strong>&lt;article&gt;</strong>, typically used for standalone content like a blog post.</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Nav vs Anchor -->
+  <div class="example">
+    <h3>3. Nav vs Anchor</h3>
+    <div class="box">
+      <nav>
+        <h2>Navigation Menu</h2>
+        <ul>
+            <li><a href="https://vtop.vit.ac.in/vtop/open/page" target="_blank">Vtop</a></li>
+            <li><a href="https://moovit.vit.ac.in/my/courses.php" target="_blank">Moodle</a></li>
+          <li><a href="https://vtopexams.vit.ac.in/softskills/" target="_blank">Soft Skill Exam Link</a></li>
+        </ul>
+      </nav>
+      <p>This is a standalone <strong>&lt;a&gt;</strong> tag: <a href="#Load same page">Load same page</a></p>
+    </div>
+  </div>
+
+  <!-- Figure vs Image -->
+  <div class="example">
+    <h3>4. Figure vs Image</h3>
+    <div class="box">
+      <img src="car.png" alt="Standalone Image" style="width: 300px;">
+      <figure>
+        <img src="car.png" alt="Image in Figure" style="width: 300px;">
+        <figcaption>This is a caption for the image using <strong>&lt;figcaption&gt;</strong>.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Label vs Legend -->
+  <div class="example">
+    <h3>5. Label vs Legend</h3>
+    <div class="box">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name"><br><br>
+        <label for="name">Password:</label>
+        <input type="password" id="name" name="name" placeholder="Password"><br><br>
+        
+        <fieldset>
+          <legend><b>Personal Information</b></legend>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="E-Mail">
+          <p>This legend draws a border around Personal Information field</p>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <!-- Strong vs Bold vs Emphasis -->
+  <div class="example">
+    <h3>6. Strong vs Bold vs Emphasis</h3>
+    <div class="box">
+      <p>This is <strong>important</strong> text using <strong>&lt;strong&gt;</strong>.</p>
+      <p>This is <b>bold</b> text using <strong>&lt;b&gt;</strong> (visual styling only).</p>
+      <p>This is <em>emphasized</em> text using <strong>&lt;em&gt;</strong>.</p>
+    </div>
+  </div>
+</body>
+</html>

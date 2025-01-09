@@ -1,0 +1,80 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 2</title>
+  </head>
+  <body bgcolor="">
+    <form action="https://vtop.vit.ac.in/vtop/login" target="_blank">
+        <h1>HTML5 Form Elements Example</h1>
+        <fieldset>
+          <legend><b>Text Input</b></legend>
+          <label for="text-box">Enter your name:</label>
+          <input type="text" id="text-box" name="name" placeholder="Your Name" required="">
+        </fieldset>
+        <fieldset>
+          <legend><b>Radio Buttons</b></legend>
+          <label for="male">
+            <input type="radio" id="male" name="gender" value="male"> Male
+          </label>
+          <label for="female">
+            <input type="radio" id="female" name="gender" value="female"> Female
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend><b>Checkboxes</b></legend>
+          <label for="sports">
+            <input type="checkbox" id="sports" name="interests" value="sports"> Sports
+          </label>
+          <label for="gaming">
+            <input type="checkbox" id="sports" name="interests" value="sports"> Gaming
+          </label>
+          <label for="music">
+            <input type="checkbox" id="music" name="interests" value="music"> Music
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend><b>Selection Box</b></legend>
+          <label for="colors">Choose a color:</label>
+          <select id="colors" name="colors" size="3">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+            <option value="yellow">Orange</option>
+            <option value="yellow">Violet</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend><b>Option Box</b></legend>
+          <label for="browser">Choose your browser:</label>
+          <select id="browser" name="browser">
+            <option value="" disabled="" selected="">--select a browser--</option>
+            <option value="chrome">Google Chrome</option>
+            <option value="firefox">Mozilla Firefox</option>
+            <option value="safari">Safari</option>
+            <option value="edge">Microsoft Edge</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend><b>TextArea Box</b></legend>
+          <label for="comments">Enter your comments:</label>
+          <textarea id="comments" name="comments" rows="4" cols="30" placeholder="Write your comments here..."></textarea>
+        </fieldset>
+        <fieldset>
+          <legend><b>Datalist</b></legend>
+          <label for="language">Choose a programming language:</label>
+          <input type="text" id="language" name="language" list="languages">
+          <datalist id="languages">
+            <option value="Python">
+            </option><option value="JavaScript">
+            </option><option value="Java">
+            </option><option value="C#">
+            </option><option value="Ruby">
+          </option></datalist>
+        </fieldset>
+          <br>
+        <button type="submit">Submit</button>
+    </form>
+  
+  </body>
+  </html>

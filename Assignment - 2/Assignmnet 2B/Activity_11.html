@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 11 - Table with CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            border: solid black 2px;
+            background-color: rgb(145, 81, 81);
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h2 {
+            color: #000000;
+            text-transform: capitalize;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            border: 2px solid #333;
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        td img {
+            width: 100px;
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 14px;
+            color: blue;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hover effect for rows */
+        tr:hover {
+            background-color: #d3d3d3;
+        }
+
+        /* Custom background color styles */
+        .light-blue {
+            background-color: lightblue;
+        }
+
+        .light-green {
+            background-color: rgb(175, 230, 173);
+        }
+
+        .light-pink {
+            background-color: rgb(230, 182, 173);
+        }
+
+        .light-purple {
+            background-color: rgb(195, 173, 230);
+        }
+
+        .white-bg {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>ACTIVITY 11 - TABLE</h2>
+    </header>
+
+    <div class="container">
+        <table>
+            <tr>
+                <td rowspan="2" colspan="2" class="white-bg">
+                    <img src="int.jpeg" alt="Error loading image">
+                </td>
+                <td class="light-blue">r1c3</td>
+                <td rowspan="2" class="white-bg">I am successful</td>
+                <td colspan="2" rowspan="2" class="white-bg">r1c5</td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ec=GAlAFw&hl=en-GB&service=mail&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-181596940%3A1722778035953120&ddm=0" target="_blank">E-Mail</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="light-green">
+                    <a href="/Assignment - 1/Assignment 1A/home.html" target="_blank">Home.html</a>
+                </td>
+                <td colspan="2">
+                    <a href="https://media.cnn.com/api/v1/images/stellar/prod/220317092717-03-f1-season-preview-2022.jpg?c=16x9&q=h_833,w_1480,c_fill" target="_blank">Image link</a>
+                </td>
+                <td class="white-bg">r3c6</td>
+            </tr>
+            <tr>
+                <td class="light-pink">r4c1</td>
+                <td colspan="2" class="light-green">r4c2</td>
+                <td rowspan="2" class="white-bg">r4c4</td>
+                <td colspan="2" class="white-bg">Today will be a productive day</td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2" class="light-purple">r5c1</td>
+                <td rowspan="2" class="white-bg">I wake up motivated</td>
+                <td rowspan="2" colspan="2" class="white-bg">r5c5</td>
+            </tr>
+            <tr>
+                <td class="white-bg">I am filled with focus</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

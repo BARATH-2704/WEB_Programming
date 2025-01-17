@@ -4,156 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body bgcolor="#FEF8DD">
+<body>
 
     <!-- Header -->
-    <table width="100%" cellpadding="10" bgcolor="#FEF8DD">
-        <tr>
-            <td align="center">
-                <h1><font color="#8A2BE2">Welcome to My Website</font></h1>
-            </td>
-        </tr>
-    </table>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
     <hr>
 
-<table width="100%" bgcolor="#FFE4B5" cellpadding="10">
-    <tr>
-        <td align="center">
-            <h3><font color="#000080">Navigation</font></h3>
-            <a href="#home" style="color:#006400;">Home</a> | 
-            <a href="#activity" style="color:#006400;">Activities</a> | 
-            <a href="#blog" style="color:#006400;">Blog</a> | 
-            <a href="#contact" style="color:#006400;">Contact</a>
-        </td>
-    </tr>
-</table>
+    <!-- Navigation Bar -->
+    <nav>
+        <h3>Navigation</h3>
+        <a href="#home">Home</a> | 
+        <a href="#activity">Activities</a> | 
+        <a href="#blog">Blog</a> | 
+        <a href="#contact">Contact</a>
+    </nav>
 
-<!-- Home Page -->
-<article id="home" bgcolor="#FAFAE6">
-    <h2><font color="#D2691E">Home Page</font></h2>
-    <p>
-        Welcome to my personal web development hub! This website is designed to showcase my journey and skills in creating websites using HTML, CSS, and JavaScript. It provides a comprehensive guide on how to host your own website using GitHub Pages. Whether you're just starting your coding journey or you're looking to expand your web development knowledge, you'll find a variety of resources here.
-    </p>
-    <h2><font color="#D2691E">About Me</font></h2>
-
-    <p>
-        I’m a passionate web creator on a mission to build the digital world of tomorrow. <a href="Assignment - 1/Assignment 1A/home.html" target="_blank" style="color:#0000FF;">To know more click here!</a>
-    </p>
-</article>
-<hr>
-
-<!-- Navigation Page - Activities -->
-<article id="activity" bgcolor="#FFF8DC">
-    <h2><font color="#8B4513">Navigation Page - Activities</font></h2>
-    <h3><font color="#8B0000">Assignment 1A:</font></h3>
-    <ul>
-        <li><strong><font color="#8B4513">Activity 1:</font></strong></li>
+    <!-- Home Page -->
+    <section id="home" class="home-section">
+        <h2>Home Page</h2>
         <p>
-            "Activity 1 focuses on text formatting and using images to enhance web content. In this task, I’ve designed a webpage that introduces myself,
-             using various HTML elements like headings, paragraphs, and images. I’ve also implemented text styling techniques such as bold, italics, and emphasized text to highlight key points.
-             This activity helps improve the understanding of HTML tags for text formatting and integrating images effectively within the webpage layout."
-            <a href="Assignment - 1/Assignment 1A/home.html" target="_blank" style="color:#0000FF;">Click here for Activity 1</a>
+            Welcome to my personal web development hub! This website is designed to showcase my journey and skills in creating websites using HTML, CSS, and JavaScript. It provides a comprehensive guide on how to host your own website using GitHub Pages. Whether you're just starting your coding journey or you're looking to expand your web development knowledge, you'll find a variety of resources here.
         </p>
-
-        <li>
-            <strong><font color="#8B4513">Activity 2:</font></strong>
-            <p>"In this section, I’ve used appropriate list elements to organize and present various 
-                data clearly. First, I’ve listed the courses for Winter 2024-2025, providing a clear 
-                outline of the subjects offered. Then, I’ve listed programming languages along with a 
-                self-assigned rating out of 10 to give insight into my proficiency in each. Finally, I’ve included reviews or summaries of my top three favorite movies, books, TV shows, or music concerts,
-                 showcasing my personal interests and reflections on these cultural experiences." <a href="Assignment - 1/Assignment 1A/list.html" target="_blank" style="color:#0000FF;">Click here for Activity 2</a></p>
-        </li>
-        <li>
-            <strong><font color="#8B4513">Activity 3:</font></strong>
-            <p> "In this activity we will create a table and incorporate various features"
-            </p>
-            <ul>
-                <li>r1c1 – include any images of your choice</li>
-                <li>r1c3, r5c1, r4c1, r4c2- shades with your favourite color</li>
-                <li>r1c4, r5c3, r6c4, r5c5- include your positive affirmations (use font family, color, formatting as per choice)</li>
-                <li>r3c1- provide links to “home.html”</li>
-                <li>r2c3- Email as hyperlinks</li>
-                <li>r3c4- image as hyperlinks</li>
-            </ul>
-            <a href="Assignment - 1/Assignment 1A/table.html" target="_blank" style="color:#0000FF;">Click here for Activity 3</a>
-        </li>
-    </ul>
-    
-    <a href="Assignment - 1/Assignment 1A/"></a>
-    <h3><font color="#8B0000">Activity 1B:</font></h3>
-    <ul>
-        <li><strong><font color="#8B4513">Activity 4:</font></strong></li>
+        <h2>About Me</h2>
         <p>
-            "In this activity, I explored the usage of various HTML elements to understand their behavior and differences. By comparing elements like `div` vs `span`, `div` vs `section`, and `paragraph` vs `article`, I observed how each tag is used for structuring content in different contexts. Additionally, I examined `navigation` vs `anchor`, `figure` vs `image`, and `label` vs `legends` to identify how they function in organizing content. Finally, I investigated the differences between the `strong`, `bold`, and `emphasis` tags to understand how they impact text styling. Through this exercise, I 
-            gained a deeper understanding of how these elements contribute to web page layout and presentation."
+            I’m a passionate web creator on a mission to build the digital world of tomorrow. <a href="Assignment - 1/Assignment 1A/home.html" target="_blank">To know more click here!</a>
         </p>
-        <span><a href="Assignment - 1/Assignment 1B/Activity_4.html" target="_blank" style="color:#0000FF;">Click here for Activity 4</a></span>
-        
-        <li><strong><font color="#8B4513">Activity 5:</font></strong></li>
-        <p>
-            "In this activity, I created a GitHub repository to upload and host all my web pages. This allowed me to share my work online and showcase my web development skills. Additionally, I prepared a video report that demonstrates how to host a website on GitHub, explaining the steps involved in setting up a repository and deploying a website using GitHub Pages. The video, which is under 3 minutes long, is embedded in my website to provide an easy-to-follow guide for others interested in web hosting. 
-            This activity helped me understand the process of using GitHub for version control and web hosting."
-        </p>
-        <span><a href="Assignment - 1/Assignment 1B/Activity_5.html" target="_blank" style="color:#0000FF;">Click here for Activity 5</a></span>
-    </ul>
+    </section>
+    <hr>
 
-    <h3><font color="#8B0000">Activity 1C:</font></h3>
-    <ul>
-        <li><strong><font color="#8B4513">Activity 6:</font></strong></li>
-        <p>
-            "In this activity, I designed a web page to receive user input through HTML forms. The page includes two main forms: one for sign-up details and another for sign-in. The sign-up form contains input fields for character name, email ID, and password, along with a checkbox for terms and conditions. The sign-in form allows users to log in with their credentials. I used the action attribute to link the forms to their respective destinations,
-             ensuring smooth navigation between the sign-up and sign-in processes."
-        </p>
-             <span>Here we built <b>SignUp Page</b> which redirects to <b>Login Page</b></span><a href="Assignment - 1/Assignment 1C/Activity 6/sign_up.html" target="_blank" style="color:#0000FF;">Click here for Form 1</a>
+    <!-- Activities Page -->
+    <section id="activity" class="activity-section">
+        <h2>Navigation Page - Activities</h2>
+        <h3>Assignment 1A:</h3>
+        <ul>
+            <li>
+                <strong>Activity 1:</strong>
+                <p>
+                    Activity 1 focuses on text formatting and using images to enhance web content. In this task, I’ve designed a webpage that introduces myself, using various HTML elements like headings, paragraphs, and images. I’ve also implemented text styling techniques such as bold, italics, and emphasized text to highlight key points. This activity helps improve the understanding of HTML tags for text formatting and integrating images effectively within the webpage layout.
+                    <a href="Assignment - 1/Assignment 1A/home.html" target="_blank">Click here for Activity 1</a>
+                </p>
+            </li>
 
-        <li><strong><font color="#8B4513">Activity 7:</font></strong></li>
-        <p>Incorporate HTML Block and Inline Elements <span> in the existing “activity 1”.</p>
-        <a href="Assignment - 1/Assignment 1C/Activity 7/home_modified.html" target="_blank" style="color:#0000FF;">Click here for Activity 7</a>
+            <li>
+                <strong>Activity 2:</strong>
+                <p>
+                    In this section, I’ve used appropriate list elements to organize and present various data clearly. First, I’ve listed the courses for Winter 2024-2025, providing a clear outline of the subjects offered. Then, I’ve listed programming languages along with a self-assigned rating out of 10 to give insight into my proficiency in each. Finally, I’ve included reviews or summaries of my top three favorite movies, books, TV shows, or music concerts, showcasing my personal interests and reflections on these cultural experiences. 
+                    <a href="Assignment - 1/Assignment 1A/list.html" target="_blank">Click here for Activity 2</a>
+                </p>
+            </li>
 
-        <li><strong><font color="#8B4513">Activity 8:</font></strong></li>
-        <p>"In this activity, I designed a web page called 'myindex.html' that follows the principles of semantic HTML." The page includes the following sections:
-            <ul>
-                <li>Home Page - Short Descriptions about your theme.</li>
-                <li>Navigation page- include all the activity listed in assignment 1A, 1B, and 1C </li>
-                <li>Blog Page – Photos/ videos/ hyperlinks</li>
-                <li>Contact us – Use your intuitive approach and add the form fields for a contact us page in the footer.</li>
-            </ul>
-            <p>Click here to load this <a href="#"> Page</a></p>
-        </p>
-    </ul>
-</article>
-<hr>
+            <li>
+                <strong>Activity 3:</strong>
+                <p>
+                    In this activity we will create a table and incorporate various features.
+                    <ul>
+                        <li>r1c1 – include any images of your choice</li>
+                        <li>r1c3, r5c1, r4c1, r4c2- shades with your favourite color</li>
+                        <li>r1c4, r5c3, r6c4, r5c5- include your positive affirmations (use font family, color, formatting as per choice)</li>
+                        <li>r3c1- provide links to “home.html”</li>
+                        <li>r2c3- Email as hyperlinks</li>
+                        <li>r3c4- image as hyperlinks</li>
+                    </ul>
+                    <a href="Assignment - 1/Assignment 1A/table.html" target="_blank">Click here for Activity 3</a>
+                </p>
+            </li>
+        </ul>
 
-<!-- Blog Page -->
-<article id="blog" bgcolor="#FFF0F5">
-    <h2><font color="#8B4513">Blog Page</font></h2>
-    <h3><font color="#800000">Video Tutorial</font></h3>
-    <p>Watch my video on web hosting tips:</p>
-    <video width="320" controls>
-        <source src="Assignment - 1/Assignment 1B/GitHub.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <p>Click here to <a href="Assignment - 1/Assignment 1B/Activity_5.html" target="_blank" style="color:#0000FF;">View tutorial</a> in new page</p>
-    <p>Click here to view in <a href="https://www.youtube.com/watch?v=nu9lvZrx_zE" target="_blank" style="color:#0000FF;">Youtube</a></p>
-</article>
-<hr>
+        <h3>Activity 1B:</h3>
+        <ul>
+            <li>
+                <strong>Activity 4:</strong>
+                <p>
+                    In this activity, I explored the usage of various HTML elements to understand their behavior and differences. By comparing elements like `div` vs `span`, `div` vs `section`, and `paragraph` vs `article`, I observed how each tag is used for structuring content in different contexts. Additionally, I examined `navigation` vs `anchor`, `figure` vs `image`, and `label` vs `legends` to identify how they function in organizing content. Finally, I investigated the differences between the `strong`, `bold`, and `emphasis` tags to understand how they impact text styling.
+                    <a href="Assignment - 1/Assignment 1B/Activity_4.html" target="_blank">Click here for Activity 4</a>
+                </p>
+            </li>
 
-<!-- Contact Us Page -->
-<article id="contact" bgcolor="#E0FFFF">
-    <h2><font color="#8B4513">Contact Us</font></h2>
-    <h3><font color="#000080">Get in Touch</font></h3>
-    <p>We’d love to hear from you! Whether you have questions, feedback, or just want to connect, feel free to reach out. Use the form below to send us a message, and we’ll get back to you as soon as possible.</p>
-    <form action="https://img.freepik.com/premium-vector/thank-you-caligraphic-vector-illustration-concept_1253202-40937.jpg?semt=ais_hybrid" target="_blank">
-        <label for="name" style="color:#8B4513;">Name:</label><br>
-        <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
-        <label for="email" style="color:#8B4513;">Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
-        <label for="message" style="color:#8B4513;">Message:</label><br>
-        <textarea id="message" name="message" placeholder="Write your message"></textarea><br><br>
-        <button type="submit">Submit</button>
-    </form>
-</article>
-<hr>
+            <li>
+                <strong>Activity 5:</strong>
+                <p>
+                    In this activity, I created a GitHub repository to upload and host all my web pages. This allowed me to share my work online and showcase my web development skills. Additionally, I prepared a video report that demonstrates how to host a website on GitHub, explaining the steps involved in setting up a repository and deploying a website using GitHub Pages.
+                    <a href="Assignment - 1/Assignment 1B/Activity_5.html" target="_blank">Click here for Activity 5</a>
+                </p>
+            </li>
+        </ul>
+
+        <h3>Activity 1C:</h3>
+        <ul>
+            <li>
+                <strong>Activity 6:</strong>
+                <p>
+                    In this activity, I designed a web page to receive user input through HTML forms. The page includes two main forms: one for sign-up details and another for sign-in. The sign-up form contains input fields for character name, email ID, and password, along with a checkbox for terms and conditions. The sign-in form allows users to log in with their credentials. I used the action attribute to link the forms to their respective destinations.
+                    <a href="Assignment - 1/Assignment 1C/Activity 6/sign_up.html" target="_blank">Click here for Form 1</a>
+                </p>
+            </li>
+
+            <li>
+                <strong>Activity 7:</strong>
+                <p>
+                    Incorporate HTML Block and Inline Elements in the existing “activity 1”.
+                    <a href="Assignment - 1/Assignment 1C/Activity 7/home_modified.html" target="_blank">Click here for Activity 7</a>
+                </p>
+            </li>
+
+            <li>
+                <strong>Activity 8:</strong>
+                <p>
+                    In this activity, I designed a web page called 'myindex.html' that follows the principles of semantic HTML. The page includes the following sections:
+                    <ul>
+                        <li>Home Page - Short Descriptions about your theme.</li>
+                        <li>Navigation page- include all the activities listed in assignment 1A, 1B, and 1C</li>
+                        <li>Blog Page – Photos/ videos/ hyperlinks</li>
+                        <li>Contact us – Add form fields for a contact us page in the footer.</li>
+                    </ul>
+                    <a href="#">Click here to load this page</a>
+                </p>
+            </li>
+        </ul>
+    </section>
+    <hr>
+
+    <!-- Blog Page -->
+    <section id="blog" class="blog-section">
+        <h2>Blog Page</h2>
+        <h3>Video Tutorial</h3>
+        <p>Watch my video on web hosting tips:</p>
+        <video width="320" controls>
+            <source src="Assignment - 1/Assignment 1B/GitHub.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p>Click here to <a href="Assignment - 1/Assignment 1B/Activity_5.html" target="_blank">View tutorial</a></p>
+        <p>Click here to view in <a href="https://www.youtube.com/watch?v=nu9lvZrx_zE" target="_blank">Youtube</a></p>
+    </section>
+    <hr>
+
+    <!-- Contact Us Page -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <h3>Get in Touch</h3>
+        <p>We’d love to hear from you! Whether you have questions, feedback, or just want to connect, feel free to reach out. Use the form below to send us a message, and we’ll get back to you as soon as possible.</p>
+        <form action="https://img.freepik.com/premium-vector/thank-you-caligraphic-vector-illustration-concept_1253202-40937.jpg?semt=ais_hybrid" target="_blank">
+            <label for="name"><b>Name:</b></label><br><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+            <label for="email"><b>Email:</b></label><br><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+            <label for="message"><b>Message:</b></label><br><br>
+            <textarea id="message" name="message" placeholder="Write your message" required></textarea><br><br>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </section>
+    <hr>
 </body>
 </html>

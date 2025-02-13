@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <fieldset>
+        <h2>Login</h2>
+        <form onsubmit="return validateLogin()">
+            <label>Email: </label><br>
+            <input type="email" id="loginEmail" placeholder="Enter E-Mail" required>
+            <br><br>
+            <label>Password: </label><br>
+            <input type="password" id="loginPassword" placeholder="Enter Password" required>
+            <br><br>
+            <input type="checkbox" onclick="togglePassword()"><span> Show Password</span>
+            <br><br>
+            <button type="submit">SIGN IN</button>
+            <br><br>
+            <span>Don't have an account? <a href="sign_up.html" style="color: blue;">Register Here</a></span>
+        </form>
+    </fieldset>
+
+    <script>
+        function validateLogin() {
+            var loginEmail = document.getElementById("loginEmail").value;
+            var loginPassword = document.getElementById("loginPassword").value;
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (loginEmail.trim() === "" || loginPassword.trim() === "") {
+                alert("All fields are required!");
+                return false;
+            }
+
+            if (!emailRegex.test(loginEmail)) {
+                alert("Invalid email format!");
+                return false;
+            }
+
+            alert("Login successful!");
+            return true;
+        }
+
+        function togglePassword() {
+            var passwordField = document.getElementById("loginPassword");
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        }
+    </script>
+</body>
+</html>

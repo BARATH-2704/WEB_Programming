@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <fieldset>
+        <form onsubmit="return validateSignup()">
+            <h2>Sign Up</h2>
+            <span style="color: grey;">Please fill this form to create an account</span>
+            <br><br>
+            <input type="text" id="username" placeholder="Username" required>
+            <br><br>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <br><br>
+            <input type="password" id="password" placeholder="Password" required>
+            <br><br>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <br><br>
+            <input type="checkbox" required>
+            <span style="color: grey;">I accept the </span>
+            <span style="color: green;">Terms of Use</span> & 
+            <span style="color: green;">Privacy Policy</span>
+            <br><br>
+            <button type="submit">Sign Up</button>
+            <br><br>
+            <span>If you already have an account... Click to</span>
+            <button><a href="login.html">Login</a></button>
+        </form>
+    </fieldset>
+
+    <script>
+        function validateSignup() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userPassword", password);
+            localStorage.setItem("username", username);
+
+            alert("Sign up successful! You can now log in.");
+            window.location.href = "login.html";
+            return false;
+        }
+    </script>
+</body>
+</html>

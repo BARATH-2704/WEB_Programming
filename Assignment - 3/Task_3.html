@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Yoga Day</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+    }
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 300px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      border-radius: 10px;
+    }
+    .slider img.active {
+      opacity: 1;
+    }
+    .form-section, .bill-section, .confirmation-section {
+      margin-bottom: 20px;
+    }
+    .form-section input, .form-section select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-section button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .bill-section, .confirmation-section {
+      display: none;
+    }
+    .bill-section table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .bill-section th, .bill-section td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    .confirmation-section {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>International Yoga Day</h1>
+    <div class="slider">
+      <img src="image.png" alt="Yoga Image 1" class="active">
+      <img src="image1.png" alt="Yoga Image 2">
+    </div>
+
+    <div class="form-section">
+      <h2>Event Registration</h2>
+      <form id="registrationForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <select id="type" required>
+          <option value="">Select Type</option>
+          <option value="employee">Government Employee</option>
+          <option value="student">Student</option>
+          <option value="other">Other</option>
+        </select>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <div class="bill-section">
+      <h2>Bill Details</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Type</th>
+          <th>Discount</th>
+          <th>Total</th>
+        </tr>
+        <tbody id="billDetails"></tbody>
+      </table>
+    </div>
+
+    <div class="confirmation-section">
+      <h2>Registration Confirmation</h2>
+      <p>Your confirmation code is: <strong id="confirmationCode"></strong></p>
+    </div>
+  </div>
+
+  <script>
+    const sliderImages = document.querySelectorAll('.slider img');
+    let currentImageIndex = 0;
+
+    function showNextImage() {
+      sliderImages[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
+      sliderImages[currentImageIndex].classList.add('active');
+    }
+
+    setInterval(showNextImage, 3000);
+
+    const registrationForm = document.getElementById('registrationForm');
+    const billSection = document.querySelector('.bill-section');
+    const confirmationSection = document.querySelector('.confirmation-section');
+    const billDetails = document.getElementById('billDetails');
+    const confirmationCodeElement = document.getElementById('confirmationCode');
+
+    registrationForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const type = document.getElementById('type').value;
+
+      let discount = 0;
+      if (type === 'employee') {
+        discount = 25;
+      } else if (type === 'student') {
+        discount = 50;
+      }
+
+      const total = 100 - discount;
+
+      billDetails.innerHTML = `
+        <tr>
+          <td>${name}</td>
+          <td>${email}</td>
+          <td>${type}</td>
+          <td>${discount}%</td>
+          <td>$${total}</td>
+        </tr>
+      `;
+      billSection.style.display = 'block';
+
+      const confirmationCode = Math.floor(100000 + Math.random() * 900000);
+      confirmationCodeElement.textContent = confirmationCode;
+      confirmationSection.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

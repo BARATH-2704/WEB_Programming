@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+</head>
+<body>
+    <form onsubmit="return validateEventRegistration()">
+        <h1>Event Registration Form</h1>
+
+        <fieldset>
+            <legend><b>Text Input</b></legend>
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Radio Buttons</b></legend>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Checkboxes</b></legend>
+            <label><input type="checkbox" id="sports" name="interests" value="sports"> Sports</label>
+            <label><input type="checkbox" id="gaming" name="interests" value="gaming"> Gaming</label>
+            <label><input type="checkbox" id="music" name="interests" value="music"> Music</label>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Email & Phone</b></legend>
+            <label>Email: </label>
+            <input type="email" id="email" placeholder="Enter Email" required>
+            <br><br>
+            <label>Phone Number: </label>
+            <input type="text" id="phone" placeholder="Enter Phone Number" required>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Password</b></legend>
+            <label>Password: </label>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <br><br>
+            <label>Confirm Password: </label>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>TextArea Box</b></legend>
+            <label for="comments">Enter your comments:</label>
+            <textarea id="comments" name="comments" rows="4" cols="30" placeholder="Write your comments here..."></textarea>
+        </fieldset>
+
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateEventRegistration() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var comments = document.getElementById("comments").value;
+
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var phoneRegex = /^[0-9]{10}$/;
+            var nameRegex = /^[A-Za-z ]+$/;
+
+            if (name.trim() === "" || email.trim() === "" || phone.trim() === "" || password.trim() === "" || confirmPassword.trim() === "" || comments.trim() === "") {
+                alert("All fields are required!");
+                return false;
+            }
+
+            if (!nameRegex.test(name)) {
+                alert("Name should only contain letters!");
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("Invalid email format!");
+                return false;
+            }
+
+            if (!phoneRegex.test(phone)) {
+                alert("Phone number must be 10 digits!");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            if (!gender) {
+                alert("Please select a gender!");
+                return false;
+            }
+
+            if (checkboxes.length === 0) {
+                alert("Please select at least one interest!");
+                return false;
+            }
+
+            alert("Registration successful!");
+            return true;
+        }
+    </script>
+</body>
+</html>

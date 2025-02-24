@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Representation</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Basic Emotions</h2>
+    <canvas id="emotionCanvas" width="500" height="300"></canvas>
+    <p id="emotionText"></p>
+    
+    <script>
+        const canvas = document.getElementById("emotionCanvas");
+        const ctx = canvas.getContext("2d");
+        const emotions = [
+            { name: "Joy", color: "#FFD700", x: 80, y: 80 },
+            { name: "Trust", color: "#90EE90", x: 200, y: 80 },
+            { name: "Fear", color: "#5F9EA0", x: 320, y: 80 },
+            { name: "Surprise", color: "#87CEEB", x: 440, y: 80 },
+            { name: "Sadness", color: "#4682B4", x: 80, y: 200 },
+            { name: "Disgust", color: "#9370DB", x: 200, y: 200 },
+            { name: "Anger", color: "#FF6347", x: 320, y: 200 },
+            { name: "Anticipation", color: "#FFA500", x: 440, y: 200 }
+        ];
+
+        function drawEmotions() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            emotions.forEach(emotion => {
+                ctx.beginPath();
+                ctx.arc(emotion.x, emotion.y, 40, 0, Math.PI * 2);
+                ctx.fillStyle = emotion.color;
+                ctx.fill();
+                ctx.closePath();
+            });
+        }
+
+        canvas.addEventListener("click", function(event) {
+            const rect = canvas.getBoundingClientRect();
+            const clickX = event.clientX - rect.left;
+            const clickY = event.clientY - rect.top;
+
+            emotions.forEach(emotion => {
+                const distance = Math.sqrt((clickX - emotion.x) ** 2 + (clickY - emotion.y) ** 2);
+                if (distance < 40) {
+                    document.getElementById("emotionText").innerText = "Selected Emotion: " + emotion.name;
+                }
+            });
+        });
+
+        drawEmotions();
+    </script>
+</body>
+</html>

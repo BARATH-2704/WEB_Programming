@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.score-board div {
+    font-size: 20px;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.choice-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.choice-btn:hover {
+    background-color: #45a049;
+}
+
+.result {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#play-again-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#play-again-btn:hover {
+    background-color: #e53935;
+}
+  </style>
+
+<script>
+  let playerScore = 0;
+let computerScore = 0;
+
+const choices = ['rock', 'paper', 'scissors'];
+
+function userChoice(choice) {
+    const computerChoice = getComputerChoice();
+    const winner = determineWinner(choice, computerChoice);
+    updateResult(winner, choice, computerChoice);
+    updateScore(winner);
+    document.getElementById('play-again-btn').style.display = 'inline-block';
+}
+
+function getComputerChoice() {
+    return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function determineWinner(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        return 'draw';
+    }
+
+    if (
+        (playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper') ||
+        (playerChoice === 'paper' && computerChoice === 'rock')
+    ) {
+        return 'player';
+    } else {
+        return 'computer';
+    }
+}
+
+function updateResult(winner, playerChoice, computerChoice) {
+    let resultText = '';
+    if (winner === 'draw') {
+        resultText = `It's a draw! You both chose ${playerChoice}.`;
+    } else if (winner === 'player') {
+        resultText = `You win! ${capitalize(playerChoice)} beats ${capitalize(computerChoice)}.`;
+    } else {
+        resultText = `Computer wins! ${capitalize(computerChoice)} beats ${capitalize(playerChoice)}.`;
+    }
+    document.getElementById('result').textContent = resultText;
+}
+
+function updateScore(winner) {
+    if (winner === 'player') {
+        playerScore++;
+        document.getElementById('player-score').textContent = playerScore;
+    } else if (winner === 'computer') {
+        computerScore++;
+        document.getElementById('computer-score').textContent = computerScore;
+    }
+}
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById('player-score').textContent = playerScore;
+    document.getElementById('computer-score').textContent = computerScore;
+    document.getElementById('result').textContent = 'Choose your weapon!';
+    document.getElementById('play-again-btn').style.display = 'none';
+}
+
+</script>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        
+        <div class="score-board">
+            <div class="player-score">
+                <h2>Player</h2>
+                <p id="player-score">0</p>
+            </div>
+            <div class="computer-score">
+                <h2>Computer</h2>
+                <p id="computer-score">0</p>
+            </div>
+        </div>
+
+        <div class="choices">
+            <button class="choice-btn" onclick="userChoice('rock')">Rock</button>
+            <button class="choice-btn" onclick="userChoice('paper')">Paper</button>
+            <button class="choice-btn" onclick="userChoice('scissors')">Scissors</button>
+        </div>
+
+        <div id="result" class="result">
+            <p>Choose your weapon!</p>
+        </div>
+
+        <button id="play-again-btn" onclick="resetGame()" style="display:none;">Play Again</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

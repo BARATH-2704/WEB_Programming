@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cactus using Canvas</title>
+</head>
+<body>
+    <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;color: rgb(107, 80, 206);letter-spacing: 3px;margin-left: 110px ;">CACTUS</h3>
+    <canvas id="myCanvas" width="300" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "#F7E7C3";  
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath();
+        ctx.arc(150, 100, 60, 0, Math.PI, true);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(150, 110, 60, Math.PI, 2 * Math.PI, true);
+        ctx.fillStyle = "lightgrey";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(20, 320);
+        ctx.lineTo(280, 320);
+        ctx.lineTo(240, 400);
+        ctx.lineTo(60, 400);
+        ctx.closePath();
+        ctx.fillStyle="#C19A6B ";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(220, 320);
+        ctx.lineTo(280, 320);
+        ctx.lineTo(240, 400); 
+        ctx.lineTo(160, 400); 
+        ctx.closePath();
+        ctx.fillStyle = "#A0522D";
+        ctx.fill();
+
+        ctx.fillStyle = "#5DAE7F";  
+        ctx.beginPath();
+        ctx.moveTo(60, 320);
+        ctx.lineTo(45, 200);
+        ctx.lineTo(80, 320);
+        ctx.closePath();
+        ctx.fill();
+        ctx.fillStyle = "#A0C55F";  
+        ctx.beginPath();
+        ctx.moveTo(60, 320);
+        ctx.lineTo(70, 180);
+        ctx.lineTo(80, 320);
+        ctx.closePath();
+        ctx.fill();
+        ctx.fillStyle = "#3F95C0";  
+        ctx.beginPath();
+        ctx.moveTo(60, 320);
+        ctx.lineTo(100, 200);
+        ctx.lineTo(80, 320);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "white";
+        for (let i = 0; i < 5; i++) {
+            let x = 60 + Math.random() * 20;
+            let y = 220 + Math.random() * 80;
+            ctx.beginPath();
+            ctx.arc(x, y, 3, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+
+        ctx.fillStyle = "#2E8B57";
+        ctx.fillRect(150, 200, 100, 120);
+        ctx.beginPath();
+        ctx.arc(200, 200, 50, Math.PI, 0, false);
+        ctx.fill();
+        ctx.fillStyle = "#76C76C";
+        ctx.fillRect(190, 180, 20, 140);
+        ctx.beginPath();
+        ctx.arc(200, 180, 10, Math.PI, 0, false);
+        ctx.fill();
+
+        ctx.strokeStyle = "#333"; 
+        ctx.lineWidth = 2;
+        let spikeLength = 8; 
+        for (let y = 210; y <= 310; y += 15) {
+            ctx.beginPath();
+            ctx.moveTo(145, y);
+            ctx.lineTo(145 - spikeLength, y);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(255, y);
+            ctx.lineTo(255 + spikeLength, y);
+            ctx.stroke();
+        }
+        for (let angle = Math.PI; angle <= 0; angle += Math.PI / 10){
+            let x = 200 + 50 * Math.cos(angle); 
+            let y = 200 + 50 * Math.sin(angle); 
+            let dx = Math.cos(angle - Math.PI / 2) * spikeLength; 
+            let dy = Math.sin(angle - Math.PI / 2) * spikeLength; 
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x + dx, y + dy);
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>
